@@ -11,7 +11,7 @@ const reactionSchema = new Schema(
       required: true,
       maxlength: 280,
     },
-    username: {
+    userName: {
         type: String,
         required: true,
     },
@@ -28,5 +28,9 @@ const reactionSchema = new Schema(
     id: false,
   }
 );
+
+function format(createdAt) {
+    return createdAt.toDateString();
+}
 
 module.exports = reactionSchema;
