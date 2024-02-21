@@ -6,7 +6,9 @@ module.exports = {
     try {
       const users = await User.find();
         //.populate('friends', 'userName')
-        //.exec(); //.populate({path: 'friends', select: 'userName'});
+        //.exec(); 
+        //.populate({path: 'friends', select: 'userId'});
+        //.populate('friends');
       res.json(users);
     } catch (err) {
       res.status(500).json(err);
